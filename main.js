@@ -1,8 +1,13 @@
 $(document).ready(() => {
     const randomiseNamesInput = $(".randomise-names textarea[name='names']");
+    const randomiseNamesClear = $(".randomise-names .clear");
     const randomiseNamesSubmit = $(".randomise-names .submit");
     const randomiseNamesList = $(".randomise-names .list");
     const randomiseNamesAssigned = $(".randomise-names .assigned");
+
+    randomiseNamesClear.click(() => {
+        clearRandomiseNamesInput();
+    });
 
     randomiseNamesSubmit.click(() => {
         const val = randomiseNamesInput.val();
@@ -21,9 +26,14 @@ $(document).ready(() => {
 
     const randomiseGroupNamesInput = $(".randomise-group-names textarea[name='names']");
     const randomiseGroupNamesChunkInput = $(".randomise-group-names input[name='chunk']");
+    const randomiseGroupNamesClear = $(".randomise-group-names .clear");
     const randomiseGroupNamesSubmit = $(".randomise-group-names .submit");
     const randomiseGroupNamesList = $(".randomise-group-names .list");
     const randomiseGroupNamesAssigned = $(".randomise-group-names .assigned");
+
+    randomiseGroupNamesClear.click(() => {
+        clearRandomiseGroupNamesInput();
+    });
 
     randomiseGroupNamesSubmit.click(() => {
         const val = randomiseGroupNamesInput.val();
@@ -43,7 +53,7 @@ $(document).ready(() => {
             });
 
             clearRandomiseGroupNames();
-            
+
             let listHtmls = '';
             namesCopy.map(array => {
                 listHtmls += generateListHtml(array, 'mb-3');
@@ -121,15 +131,21 @@ $(document).ready(() => {
     }
 
     function clearRandomiseNames() {
-        randomiseNamesInput.val('');
         randomiseNamesList.html('');
         randomiseNamesAssigned.html('');
     }
 
+    function clearRandomiseNamesInput() {
+        randomiseNamesInput.val('');
+    }
+
     function clearRandomiseGroupNames() {
-        randomiseGroupNamesInput.val('');
-        randomiseGroupNamesChunkInput.val('');
         randomiseGroupNamesList.html('');
         randomiseGroupNamesAssigned.html('');
+    }
+
+    function clearRandomiseGroupNamesInput() {
+        randomiseGroupNamesInput.val('');
+        randomiseGroupNamesChunkInput.val('');
     }
 });
