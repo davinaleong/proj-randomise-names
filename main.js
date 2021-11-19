@@ -1,13 +1,3 @@
-/*
-Davina
-Jolyn
-Gabby
-Fiona
-Lisa
-Josh
-Isaiah
-Christopher
-*/
 $(document).ready(() => {
     const randomiseNamesInput = $(".randomise-names textarea[name='names']");
     const randomiseNamesClear = $(".randomise-names .clear");
