@@ -1,3 +1,13 @@
+/*
+Davina
+Jolyn
+Gabby
+Fiona
+Lisa
+Josh
+Isaiah
+Christopher
+*/
 $(document).ready(() => {
     const randomiseNamesInput = $(".randomise-names textarea[name='names']");
     const randomiseNamesClear = $(".randomise-names .clear");
@@ -41,27 +51,27 @@ $(document).ready(() => {
 
         if (val !== '' && chunkVal !== '' && chunkVal > 0) {
             const names = splitVal(randomiseGroupNamesInput);
-            let namesCopy = names.slice();
-            namesCopy = divideArray(namesCopy, chunkVal);
+            let randomised = shuffle(names.slice());
+            randomised = reshuffle(names, randomised);
+            randomised = divideArray(randomised, chunkVal);
 
-            const randomised = namesCopy.slice();
-            console.log(namesCopy, randomised);
-            randomised.map((array, index) => {
+            const randomisedCopy = randomised.slice();
+            randomisedCopy.map((array, index) => {
                 const arrayCopy = array.slice();
-                randomised[index] = shuffle(arrayCopy);
-                randomised[index] = reshuffle(array, arrayCopy);
+                randomisedCopy[index] = shuffle(arrayCopy);
+                randomisedCopy[index] = reshuffle(array, arrayCopy);
             });
 
             clearRandomiseGroupNames();
 
             let listHtmls = '';
-            namesCopy.map(array => {
+            randomised.map(array => {
                 listHtmls += generateListHtml(array, 'mb-3');
             });
             randomiseGroupNamesList.html(listHtmls);
 
             let assignedHtmls = '';
-            randomised.map(array => {
+            randomisedCopy.map(array => {
                 assignedHtmls += generateListHtml(array, 'mb-3');
             });
             randomiseGroupNamesAssigned.html(assignedHtmls);
