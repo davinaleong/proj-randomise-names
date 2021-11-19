@@ -1,3 +1,13 @@
+/*
+Test values:
+
+Jolyn
+Davina
+Gabby
+Josh
+Isaiah
+Fiona
+*/
 $(document).ready(function() {
     const randomiseNamesInput = $("#randomiseNames textarea[name='names']");
     const randomiseNamesSubmit = $("#randomiseNames .submit");
