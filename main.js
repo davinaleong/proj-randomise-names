@@ -33,12 +33,12 @@ $(document).ready(function() {
         return element.val().split(/\r?\n/);
     }
 
-    function generateListHtml(array) {
-        let olHtml = '<ol>';
+    function generateListHtml(array, className = '') {
+        let olHtml = `<ol class="${className}">`;
         array.map(item => {
             olHtml += `<li>${item}</li>`;
         });
-        olHtml += '</ol>';
+        olHtml += `</ol>`;
 
         return olHtml;
     }

@@ -1,10 +1,21 @@
-.form,
-.list,
-.assigned {
+#randomiseNames .form,
+#randomiseNames .list,
+#randomiseNames .assigned {
     min-width: 200px;
 }
 
-.list,
-.assigned {
+#randomiseNames .list,
+#randomiseNames .assigned {
     min-height: 250px;
+}
+
+#randomiseGroupNames .form,
+#randomiseGroupNames .list,
+#randomiseGroupNames .assigned {
+    min-width: 200px;
+}
+
+#randomiseGroupNames .list,
+#randomiseGroupNames .assigned {
+    min-height: 367px;
 }
