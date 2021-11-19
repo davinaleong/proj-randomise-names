@@ -10,7 +10,8 @@ $(document).ready(function() {
         if (val !== '') {
             const names = splitVal(randomiseNamesInput);
             const namesCopy = names.slice();
-            const randomised = shuffle(names.slice());
+            let randomised = shuffle(names.slice());
+            randomised = reshuffle(names, randomised);
 
             clearRandomiseNames();
             randomiseNamesList.html(generateListHtml(namesCopy));
@@ -48,6 +49,16 @@ $(document).ready(function() {
         }
       
         return array;
+    }
+
+    function reshuffle(array, randomised) {        
+        array.map((item, index) => {
+            if (array[index] == randomised[index]) {
+                randomised = shuffle(randomised);
+            }
+        });
+
+        return randomised;
     }
 
     function clearRandomiseNames() {
