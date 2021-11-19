@@ -1,13 +1,3 @@
-/*
-Test values:
-
-Jolyn
-Davina
-Gabby
-Josh
-Isaiah
-Fiona
-*/
 $(document).ready(() => {
     const randomiseNamesInput = $(".randomise-names textarea[name='names']");
     const randomiseNamesSubmit = $(".randomise-names .submit");
@@ -20,7 +10,7 @@ $(document).ready(() => {
         if (val !== '') {
             const names = splitVal(randomiseNamesInput);
             const namesCopy = names.slice();
-            let randomised = shuffle(names.slice());
+            let randomised = shuffle(namesCopy.slice());
             randomised = reshuffle(names, randomised);
 
             clearRandomiseNames();
@@ -40,24 +30,31 @@ $(document).ready(() => {
         const chunkVal = randomiseGroupNamesChunkInput.val();
 
         if (val !== '' && chunkVal !== '' && chunkVal > 0) {
-            //TODO: Split Names
             const names = splitVal(randomiseGroupNamesInput);
             let namesCopy = names.slice();
-
-            //TODO: Divide Names
             namesCopy = divideArray(namesCopy, chunkVal);
 
-            //TODO: Randomise Names
-
-            //TODO: Clear fields
-            clearRandomiseGroupNames()
-            //TODO: Render Names
-            let olHtmls = '';
-            namesCopy.map(array => {
-                olHtmls += generateListHtml(array, 'mb-3');
+            const randomised = namesCopy.slice();
+            console.log(namesCopy, randomised);
+            randomised.map((array, index) => {
+                const arrayCopy = array.slice();
+                randomised[index] = shuffle(arrayCopy);
+                randomised[index] = reshuffle(array, arrayCopy);
             });
-            randomiseGroupNamesList.html(olHtmls);
-            //TODO: Render Randomised Names
+
+            clearRandomiseGroupNames();
+            
+            let listHtmls = '';
+            namesCopy.map(array => {
+                listHtmls += generateListHtml(array, 'mb-3');
+            });
+            randomiseGroupNamesList.html(listHtmls);
+
+            let assignedHtmls = '';
+            randomised.map(array => {
+                assignedHtmls += generateListHtml(array, 'mb-3');
+            });
+            randomiseGroupNamesAssigned.html(assignedHtmls);
         }
     });
 
