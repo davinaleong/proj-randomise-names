@@ -9,10 +9,10 @@ Isaiah
 Fiona
 */
 $(document).ready(() => {
-    const randomiseNamesInput = $("#randomiseNames textarea[name='names']");
-    const randomiseNamesSubmit = $("#randomiseNames .submit");
-    const randomiseNamesList = $("#randomiseNames .list");
-    const randomiseNamesAssigned = $("#randomiseNames .assigned");
+    const randomiseNamesInput = $(".randomise-names textarea[name='names']");
+    const randomiseNamesSubmit = $(".randomise-names .submit");
+    const randomiseNamesList = $(".randomise-names .list");
+    const randomiseNamesAssigned = $(".randomise-names .assigned");
 
     randomiseNamesSubmit.click(() => {
         const val = randomiseNamesInput.val();
@@ -29,11 +29,11 @@ $(document).ready(() => {
         }
     });
 
-    const randomiseGroupNamesInput = $("#randomiseGroupNames textarea[name='names']");
-    const randomiseGroupNamesChunkInput = $("#randomiseGroupNames input[name='chunk']");
-    const randomiseGroupNamesSubmit = $("#randomiseGroupNames .submit");
-    const randomiseGroupNamesList = $("#randomiseGroupNames .list");
-    const randomiseGroupNamesAssigned = $("#randomiseGroupNames .assigned");
+    const randomiseGroupNamesInput = $(".randomise-group-names textarea[name='names']");
+    const randomiseGroupNamesChunkInput = $(".randomise-group-names input[name='chunk']");
+    const randomiseGroupNamesSubmit = $(".randomise-group-names .submit");
+    const randomiseGroupNamesList = $(".randomise-group-names .list");
+    const randomiseGroupNamesAssigned = $(".randomise-group-names .assigned");
 
     randomiseGroupNamesSubmit.click(() => {
         const val = randomiseGroupNamesInput.val();
@@ -49,7 +49,7 @@ $(document).ready(() => {
             console.log(namesCopy);
 
             //TODO: Randomise Names
-            
+
             //TODO: Clear fields
             clearRandomiseGroupNames()
             //TODO: Render Names

@@ -18,92 +18,100 @@
 </head>
 <body>
     <main class="container">
-        <h1>Randomise Names</h1>
+        <h1 class="display-1">Name Randomiser</h1>
 
-        <section id="randomiseNames" class="randomise-names d-flex">
-            <div class="form me-3">
-                <h2>Names</h2>
-                <textarea name="names" class="form-control" id="names" rows="10"></textarea>
-                <div class="form-text">Separate names on new line.</div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center me-3">
-                <button type="button" class="btn btn-outline-primary submit">
-                    <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div>
-                <h2>Result</h2>
-                <div class="d-flex align-items-center">
-                    <div class="list">
-                    </div>
-                    <div class="mx-3">
-                        <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
-                    </div>
-                    <div class="assigned">
-                    </div>
+        <section id="randomiseNames" class="randomise-names">
+            <h2>Randomise Names</h2>
+            
+            <div class="d-flex">
+                <div class="form me-3">
+                    <h3 class="h4">Names</h3>
+                    <textarea name="names" class="form-control" id="names" rows="10"></textarea>
+                    <div class="form-text">Separate names on new line.</div>
                 </div>
-                <div class="form-text">Remember to save this list, or data will be lost!</div>
+                <div class="d-flex justify-content-center align-items-center me-3">
+                    <button type="button" class="btn btn-outline-primary submit">
+                        <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div>
+                    <h3 class="h4">Result</h3>
+                    <div class="d-flex align-items-center">
+                        <div class="list">
+                        </div>
+                        <div class="mx-3">
+                            <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="assigned">
+                        </div>
+                    </div>
+                    <div class="form-text">Remember to save this list, or data will be lost!</div>
+                </div>
             </div>
         </section>
 
         <hr>
 
-        <section id="randomiseGroupNames" class="randomise-group-names d-flex">
-            <div class="form me-3">
-                <div class="mb-3">
-                    <h2>Names</h2>
-                    <textarea name="names" class="form-control" id="names" rows="10"></textarea>
-                    <div class="form-text">Separate names on new line.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="chunk" class="form-label">Chunk Size</label>
-                    <input type="number" class="form-control" name="chunk" id="chunk" min="1">
-                    <div class="form-text">Max names in a group. Min value = 1.</div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center me-3">
-                <button type="button" class="btn btn-outline-primary submit">
-                    <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div>
-                <h2>Result</h2>
-                <div class="d-flex align-items-center">
-                    <div class="list">
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                            <li>John Doe</li>
-                        </ol>
-
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                            <li>John Doe</li>
-                        </ol>
-
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                        </ol>
+        <section id="randomiseGroupNames" class="randomise-group-names">
+            <h2>Randomise Grouped Names</h2>
+            
+            <div class="d-flex">
+                <div class="form me-3">
+                    <div class="mb-3">
+                        <h3 class="h4">Names</h3>
+                        <textarea name="names" class="form-control" id="names" rows="10"></textarea>
+                        <div class="form-text">Separate names on new line.</div>
                     </div>
-                    <div class="mx-3">
-                        <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
-                    </div>
-                    <div class="assigned">
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                            <li>John Doe</li>
-                        </ol>
-
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                            <li>John Doe</li>
-                        </ol>
-
-                        <ol class="mb-3">
-                            <li>John Doe</li>
-                        </ol>
+                    <div class="mb-3">
+                        <label for="chunk" class="form-label">Chunk Size</label>
+                        <input type="number" class="form-control" name="chunk" id="chunk" min="1">
+                        <div class="form-text">Max names in a group. Min value = 1.</div>
                     </div>
                 </div>
-                <div class="form-text">Remember to save this list, or data will be lost!</div>
+                <div class="d-flex justify-content-center align-items-center me-3">
+                    <button type="button" class="btn btn-outline-primary submit">
+                        <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div>
+                    <h3 class="h4">Result</h3>
+                    <div class="d-flex align-items-center">
+                        <div class="list">
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                                <li>John Doe</li>
+                            </ol>
+    
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                                <li>John Doe</li>
+                            </ol>
+    
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                            </ol>
+                        </div>
+                        <div class="mx-3">
+                            <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="assigned">
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                                <li>John Doe</li>
+                            </ol>
+    
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                                <li>John Doe</li>
+                            </ol>
+    
+                            <ol class="mb-3">
+                                <li>John Doe</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="form-text">Remember to save this list, or data will be lost!</div>
+                </div>
             </div>
         </section>
     </main>
