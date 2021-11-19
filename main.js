@@ -5,12 +5,17 @@ $(document).ready(function() {
     const randomiseNamesAssigned = $("#randomiseNames .assigned");
 
     randomiseNamesSubmit.click(function() {
-        const names = splitVal(randomiseNamesInput);
-        const namesCopy = names.slice();
+        const val = randomiseNamesInput.val();
 
-        clearRandomiseNames();
-        randomiseNamesList.html(generateListHtml(namesCopy));
-        // TODO: randomise names
+        if (val !== '') {
+            const names = splitVal(randomiseNamesInput);
+            const namesCopy = names.slice();
+            const randomised = shuffle(names.slice());
+
+            clearRandomiseNames();
+            randomiseNamesList.html(generateListHtml(namesCopy));
+            randomiseNamesAssigned.html(generateListHtml(randomised));
+        }
     });
 
     function splitVal(element) {
@@ -25,6 +30,24 @@ $(document).ready(function() {
         olHtml += '</ol>';
 
         return olHtml;
+    }
+
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
     }
 
     function clearRandomiseNames() {
