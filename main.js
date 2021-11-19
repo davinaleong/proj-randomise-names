@@ -29,6 +29,12 @@ $(document).ready(function() {
         }
     });
 
+    const randomiseGroupNamesInput = $("#randomiseGroupNames textarea[name='names']");
+    const randomiseGroupNamesSplitInput = $("#randomiseGroupNames input[name='split']");
+    const randomiseGroupNamesSubmit = $("#randomiseGroupNames .submit");
+    const randomiseGroupNamesList = $("#randomiseGroupNames .list");
+    const randomiseGroupNamesAssigned = $("#randomiseGroupNames .assigned");
+
     function splitVal(element) {
         return element.val().split(/\r?\n/);
     }
