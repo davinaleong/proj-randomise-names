@@ -1,0 +1,10 @@
+.form,
+.list,
+.assigned {
+    min-width: 200px;
+}
+
+.list,
+.assigned {
+    min-height: 250px;
+}
