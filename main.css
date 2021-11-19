@@ -1,21 +1,21 @@
-#randomiseNames .form,
-#randomiseNames .list,
-#randomiseNames .assigned {
+section.randomise-names .form,
+section.randomise-names .list,
+section.randomise-names .assigned {
     min-width: 200px;
 }
 
-#randomiseNames .list,
-#randomiseNames .assigned {
+section.randomise-names .list,
+section.randomise-names .assigned {
     min-height: 250px;
 }
 
-#randomiseGroupNames .form,
-#randomiseGroupNames .list,
-#randomiseGroupNames .assigned {
+section.randomise-group-names .form,
+section.randomise-group-names .list,
+section.randomise-group-names .assigned {
     min-width: 200px;
 }
 
-#randomiseGroupNames .list,
-#randomiseGroupNames .assigned {
+section.randomise-group-names .list,
+section.randomise-group-names .assigned {
     min-height: 367px;
 }
