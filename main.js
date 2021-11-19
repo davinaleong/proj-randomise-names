@@ -46,7 +46,6 @@ $(document).ready(() => {
 
             //TODO: Divide Names
             namesCopy = divideArray(namesCopy, chunkVal);
-            console.log(namesCopy);
 
             //TODO: Randomise Names
 
@@ -54,7 +53,10 @@ $(document).ready(() => {
             clearRandomiseGroupNames()
             //TODO: Render Names
             let olHtmls = '';
-            
+            namesCopy.map(array => {
+                olHtmls += generateListHtml(array, 'mb-3');
+            });
+            randomiseGroupNamesList.html(olHtmls);
             //TODO: Render Randomised Names
         }
     });
