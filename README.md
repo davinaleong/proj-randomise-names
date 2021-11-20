@@ -15,3 +15,8 @@ The second form randomises the names and puts them into chunks.
 ## Demo
 
 [View Here](https://davinaleong.github.io/proj-randomise-names/)
+
+## Credits
+
+1. [Shuffle / Randomise Array](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+2. [Divide Array into Chunks](https://stackoverflow.com/questions/8495687/split-array-into-chunks)
