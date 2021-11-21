@@ -71,33 +71,42 @@ $(document).ready(() => {
             console.log(shuffleVal);
 
             // Shuffle array
-            let randomised = shuffle(names.slice());
-            // Reshuffle array
-            randomised = reshuffle(names, randomised);
-            // Divided shuffled array into chunks
-            randomised = divideArray(randomised, chunkVal);
+            let randomised = names.slice();
+            if (shuffleVal !== '') {
+                randomised = shuffle(randomised);
+                // Reshuffle array
+                randomised = reshuffle(names, randomised);
+                // Divided shuffled array into chunks
+                randomised = divideArray(randomised, chunkVal);
+            }
 
             // Create a copy of the random-chunk array
-            const randomisedCopy = randomised.slice();
+            //const randomisedCopy = randomised.slice();
             // Shuffle inner array
-            randomisedCopy.map((array, index) => {
-                const arrayCopy = array.slice();
-                randomisedCopy[index] = shuffle(arrayCopy);
-                randomisedCopy[index] = reshuffle(array, arrayCopy);
-            });
+            // randomisedCopy.map((array, index) => {
+            //     const arrayCopy = array.slice();
+            //     randomisedCopy[index] = shuffle(arrayCopy);
+            //     randomisedCopy[index] = reshuffle(array, arrayCopy);
+            // });
 
             // Clear result field
             clearRandomiseGroupNames();
 
             // Render result
-            let listHtmls = '';
-            randomised.map(array => {
-                listHtmls += generateListHtml(array, 'mb-3');
-            });
-            //randomiseGroupNamesList.html(listHtmls);
+            // let listHtmls = '';
+            // randomised.map(array => {
+            //     listHtmls += generateListHtml(array, 'mb-3');
+            // });
+            // randomiseGroupNamesList.html(listHtmls);
+
+            // let assignedHtmls = '';
+            // randomisedCopy.map(array => {
+            //     assignedHtmls += generateListHtml(array, 'mb-3');
+            // });
+            // randomiseGroupNamesAssigned.html(assignedHtmls);
 
             let assignedHtmls = '';
-            randomisedCopy.map(array => {
+            randomised.map(array => {
                 assignedHtmls += generateListHtml(array, 'mb-3');
             });
             randomiseGroupNamesAssigned.html(assignedHtmls);
@@ -192,5 +201,6 @@ $(document).ready(() => {
     function clearRandomiseGroupNamesInput() {
         randomiseGroupNamesInput.val('');
         randomiseGroupNamesChunkInput.val('');
+        randomiseGroupNamesShuffleInput.prop('checked', false);
     }
 });
