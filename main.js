@@ -67,18 +67,18 @@ $(document).ready(() => {
         if (val !== '' && chunkVal !== '' && chunkVal > 0) {
             // Split names by end character
             const names = splitVal(randomiseGroupNamesInput);
-            const shuffleVal = $(".randomise-group-names input[name='shuffle']:checked").val();
+            const shuffleVal = $(".randomise-group-names input[name='shuffle']:checked").length;
             console.log(shuffleVal);
 
             // Shuffle array
             let randomised = names.slice();
-            if (shuffleVal !== '') {
+            if (shuffleVal > 0) {
                 randomised = shuffle(randomised);
                 // Reshuffle array
                 randomised = reshuffle(names, randomised);
-                // Divided shuffled array into chunks
-                randomised = divideArray(randomised, chunkVal);
             }
+            // Divide shuffled array into chunks
+            randomised = divideArray(randomised, chunkVal);
 
             // Create a copy of the random-chunk array
             //const randomisedCopy = randomised.slice();
