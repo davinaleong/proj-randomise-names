@@ -28,7 +28,7 @@ body {
     text-decoration: none;
     opacity: 1;
     transition: ease-in-out 0.3s opacity;
-    position: absolute;
+    position: fixed;
     right: 1em;
     bottom: 1em;
 }
