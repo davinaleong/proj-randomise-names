@@ -2,27 +2,15 @@ body {
     position: relative;
 }
 
-section.randomise-names .form,
-section.randomise-names .list,
-section.randomise-names .assigned {
-    min-width: 200px;
+.form,
+.result {
+    width: calc(45% - 1em);
 }
 
-/* section.randomise-names .list,
-section.randomise-names .assigned {
-    min-height: 250px;
-} */
-
-section.randomise-group-names .form,
-section.randomise-group-names .list,
-section.randomise-group-names .assigned {
-    min-width: 200px;
+.button {
+    width: 10%;
+    margin: 0 1em;
 }
-
-/* section.randomise-group-names .list,
-section.randomise-group-names .assigned {
-    min-height: 367px;
-} */
 
 .floating-icon {
     display: flex;
