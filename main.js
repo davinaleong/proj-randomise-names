@@ -188,6 +188,7 @@ $(document).ready(() => {
 
     // Clear randomise-names result inputs
     function clearRandomiseNamesInput() {
+        clearRandomiseNames();
         randomiseNamesInput.val('');
     }
 
@@ -199,6 +200,7 @@ $(document).ready(() => {
 
     // Clear randomise-group-names inputs
     function clearRandomiseGroupNamesInput() {
+        clearRandomiseGroupNames();
         randomiseGroupNamesInput.val('');
         randomiseGroupNamesChunkInput.val('');
         randomiseGroupNamesShuffleInput.prop('checked', false);
