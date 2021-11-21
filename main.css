@@ -18,6 +18,72 @@ body {
     transition: ease-in-out 0.3s transform;
 }
 
+.submit-indictor {
+    position: fixed;
+    bottom: 1em;
+    right: 50vw;
+    transform: translateX(50%);
+}
+
+.round {
+    display: block;
+    border: 2px solid #0d6efd;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transform: rotate(90deg);
+    transform-origin: center;
+    margin: auto;
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:12px;}
+.segunda{margin-left: 8px;}
+.next {
+	background-image: url('chevron.svg');
+    background-repeat: no-repeat;
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
 .floating-icon {
     display: flex;
     border-radius: 50%;
