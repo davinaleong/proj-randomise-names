@@ -113,6 +113,36 @@ $(document).ready(() => {
         }
     });
 
+    // Assign jQuery elements
+    const submitIndicator = $(".submit-indictor");
+    submitIndicator.hide();
+    $(".nav-link").click(() => {
+        submitIndicator.hide();
+    });
+
+    $(".nav-link[data-bs-target='#randomise-group-names']").click(() => {
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).width();
+        if (windowWidth <= 540 || windowHeight <= 650) {
+            submitIndicator.show();
+        } else {
+            submitIndicator.hide();
+        }
+    });
+
+    $(window).scroll(function() {
+        const activeTab = $("nav-link.action").data("bs-target");
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).width();
+        const scrollTop = $(window).scrollTop();
+
+        if ((windowWidth <= 540 || windowHeight <= 650) && scrollTop <= 647 && activeTab == "#randomise-group-names") {
+            submitIndicator.show();
+        } else {
+            submitIndicator.hide();
+        }
+    });
+
     // Split val by end character
     function splitVal(element) {
         return element.val().split(/\r?\n/);

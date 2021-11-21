@@ -23,6 +23,8 @@ body {
     bottom: 1em;
     right: 50vw;
     transform: translateX(50%);
+    text-decoration: none;
+    display: none;
 }
 
 .round {
