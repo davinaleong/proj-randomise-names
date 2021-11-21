@@ -4,7 +4,7 @@
 
 Someone in my church group asked me to create a tool to shuffle names of the group.
 
-Here is the tool I built. This is an online tool to shuffle names.
+Here is the tool I built. I decided to make this tool publicly available so the people outside of my church group can use it too. This is an online tool to shuffle names.
 
 There are 2 forms. This first one just shuffles the names from a list. The second form splits the names into groups. Shuffling of names can be toggled if needed.
 
