@@ -33,7 +33,7 @@ $(document).ready(() => {
             clearRandomiseNames();
 
             // Render result
-            randomiseNamesList.html(generateListHtml(namesCopy));
+            //randomiseNamesList.html(generateListHtml(namesCopy));
             randomiseNamesAssigned.html(generateListHtml(randomised));
         }
     });
@@ -41,6 +41,7 @@ $(document).ready(() => {
     // Assign jQuery elements
     const randomiseGroupNamesInput = $(".randomise-group-names textarea[name='names']");
     const randomiseGroupNamesChunkInput = $(".randomise-group-names input[name='chunk']");
+    const randomiseGroupNamesShuffleInput = $(".randomise-group-names input[name='shuffle']");
     const randomiseGroupNamesClear = $(".randomise-group-names .clear");
     const randomiseGroupNamesSubmit = $(".randomise-group-names .submit");
     const randomiseGroupNamesList = $(".randomise-group-names .list");
@@ -66,6 +67,8 @@ $(document).ready(() => {
         if (val !== '' && chunkVal !== '' && chunkVal > 0) {
             // Split names by end character
             const names = splitVal(randomiseGroupNamesInput);
+            const shuffleVal = $(".randomise-group-names input[name='shuffle']:checked").val();
+            console.log(shuffleVal);
 
             // Shuffle array
             let randomised = shuffle(names.slice());
@@ -91,7 +94,7 @@ $(document).ready(() => {
             randomised.map(array => {
                 listHtmls += generateListHtml(array, 'mb-3');
             });
-            randomiseGroupNamesList.html(listHtmls);
+            //randomiseGroupNamesList.html(listHtmls);
 
             let assignedHtmls = '';
             randomisedCopy.map(array => {

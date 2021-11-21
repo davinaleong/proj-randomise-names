@@ -4,10 +4,10 @@ section.randomise-names .assigned {
     min-width: 200px;
 }
 
-section.randomise-names .list,
+/* section.randomise-names .list,
 section.randomise-names .assigned {
     min-height: 250px;
-}
+} */
 
 section.randomise-group-names .form,
 section.randomise-group-names .list,
@@ -15,7 +15,7 @@ section.randomise-group-names .assigned {
     min-width: 200px;
 }
 
-section.randomise-group-names .list,
+/* section.randomise-group-names .list,
 section.randomise-group-names .assigned {
     min-height: 367px;
-}
+} */

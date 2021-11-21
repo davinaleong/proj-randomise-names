@@ -19,88 +19,91 @@
 </head>
 <body>
     <main class="container">
-        <h1 class="display-1">Name Randomiser</h1>
+        <h1 class="display-1">Name Processor</h1>
 
-        <section class="randomise-names">
-            <h2>Randomise Names</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="randomise-names-tab" data-bs-toggle="tab" data-bs-target="#randomise-names" type="button" role="tab" aria-controls="randomise-names" aria-selected="true">Shuffle Names</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="randomise-group-names-tab" data-bs-toggle="tab" data-bs-target="#randomise-group-names" type="button" role="tab" aria-controls="randomise-group-names" aria-selected="false">Split Names into Groups</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <section class="tab-pane randomise-names fade show active" id="randomise-names" role="tabpanel" aria-labelledby="randomise-names-tab">
+                <h2>Shuffle Names</h2>
             
-            <div class="d-flex">
-                <div class="form me-3">
-                    <div class="mb-3">
-                        <h3 class="h4">Names</h3>
-                        <textarea name="names" class="form-control" id="names" rows="10"></textarea>
-                        <div class="form-text">Separate names on new line.</div>
+                <div class="d-flex">
+                    <div class="form me-3">
+                        <div class="mb-3">
+                            <h3 class="h4">Names</h3>
+                            <div class="form-text mb-2">Separate names on new line.</div>
+                            <textarea name="names" class="form-control" id="names" rows="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-secondary clear">
+                                Clear <i class="fa fa-ban fa-fw" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-outline-secondary clear">
-                            Clear <i class="fa fa-ban fa-fw" aria-hidden="true"></i>
+                    <div class="d-flex justify-content-center align-items-center me-3">
+                        <button type="button" class="btn btn-outline-primary submit">
+                            <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
                         </button>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center align-items-center me-3">
-                    <button type="button" class="btn btn-outline-primary submit">
-                        <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <div>
-                    <h3 class="h4">Result</h3>
-                    <div class="d-flex align-items-center">
-                        <div class="list">
-                        </div>
-                        <div class="mx-3">
-                            <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
-                        </div>
-                        <div class="assigned">
+                    <div>
+                        <h3 class="h4">Result</h3>
+                        <div class="form-text mb-2">Remember to save this list, or data will be lost!</div>
+                        <div class="d-flex align-items-center">
+                            <div class="assigned">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-text">Remember to save this list, or data will be lost!</div>
                 </div>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="randomise-group-names">
-            <h2>Randomise Grouped Names</h2>
+            </section>
+            <section class="tab-pane randomise-group-names fade" id="randomise-group-names" role="tabpanel" aria-labelledby="randomise-group-names-tab">
+                <h2>Split Names into Groups</h2>
             
-            <div class="d-flex">
-                <div class="form me-3">
-                    <div class="mb-3">
-                        <h3 class="h4">Names</h3>
-                        <textarea name="names" class="form-control" id="names" rows="10"></textarea>
-                        <div class="form-text">Separate names on new line.</div>
+                <div class="d-flex">
+                    <div class="form me-3">
+                        <div class="mb-3">
+                            <h3 class="h4">Names</h3>
+                            <div class="form-text mb-2">Separate names on new line.</div>
+                            <textarea name="names" class="form-control" id="names" rows="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="chunk" class="form-label">Number of People per Group</label>
+                            <div class="form-text mb-2">Max names in a group. Min value = 1.</div>
+                            <input type="number" class="form-control" name="chunk" id="chunk" min="1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input class="form-check-input" type="checkbox" name="shuffle" value="shuffle" id="shuffle">
+                            <label class="form-check-label" for="shuffle">
+                              Shuffle Names
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-secondary clear">
+                                Clear <i class="fa fa-ban fa-fw" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="chunk" class="form-label">Chunk Size</label>
-                        <input type="number" class="form-control" name="chunk" id="chunk" min="1">
-                        <div class="form-text">Max names in a group. Min value = 1.</div>
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-outline-secondary clear">
-                            Clear <i class="fa fa-ban fa-fw" aria-hidden="true"></i>
+                    <div class="d-flex justify-content-center align-items-center me-3">
+                        <button type="button" class="btn btn-outline-primary submit">
+                            <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
                         </button>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center align-items-center me-3">
-                    <button type="button" class="btn btn-outline-primary submit">
-                        <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <div>
-                    <h3 class="h4">Result</h3>
-                    <div class="d-flex align-items-center">
-                        <div class="list">
-                        </div>
-                        <div class="mx-3">
-                            <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i>
-                        </div>
-                        <div class="assigned">
+                    <div>
+                        <h3 class="h4">Result</h3>
+                        <div class="form-text mb-2">Remember to save this list, or data will be lost!</div>
+                        <div class="d-flex align-items-center">
+                            <div class="assigned">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-text">Remember to save this list, or data will be lost!</div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
